@@ -7,4 +7,5 @@ csv_test = pd.read_csv('C:/Users/skvsn/Desktop/stroke/healthcare-dataset-stroke-
 # 행과 열의 개수 파악합니다
 print(csv_test.shape)
 
+# 데이터 전체 출력합니다.
 print(csv_test)
