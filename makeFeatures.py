@@ -55,6 +55,3 @@ dataset = tf.data.Dataset.from_tensor_slices((csv_test.values, stroke.values))
 # 출력 해보기
 for feat, targ in dataset.take(1):
   print ('Features: {}, Target: {}'.format(feat, targ))
-
-for feat, targ in dataset.take(2):
-  print ('Features: {}, Target: {}'.format(feat, targ))
