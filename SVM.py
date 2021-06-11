@@ -1,6 +1,6 @@
 #SVM
 import pandas as pd 
-csv_test = pd.read_csv('C:/Users/skvsn/Desktop/stroke/healthcare-dataset-stroke-data.csv',index_col='id')
+csv_test = pd.read_csv('C:/Users/user/Desktop/stroke/healthcare-dataset-stroke-data.csv',index_col='id')
 csv_test = csv_test.dropna()
 csv_test['gender'] = pd.Categorical(csv_test['gender'])
 csv_test['gender'] = csv_test.gender.cat.codes
@@ -21,6 +21,8 @@ from sklearn import svm
 from sklearn.model_selection import train_test_split
 import numpy as np
 x_train, x_test, y_train, y_test = train_test_split(csv_test.values, stroke.values, train_size = 0.6)
+x_train = x_train/300.0
+x_test = x_test/300.0
 
 s = svm.SVC(gamma=0.1,C=1)
 s.fit(x_train, y_train) # 학습(모델)
