@@ -35,7 +35,7 @@ mlp.add(Dense(units = n_hidden, activation = 'tanh',
               input_shape=(n_input,), kernel_initializer = 'random_uniform', bias_initializer = 'zeros'))
 mlp.add(Dense(units = n_output, activation = 'tanh', kernel_initializer = 'random_uniform', bias_initializer = 'zeros'))
 
-mlp.compile(loss = 'mean_squared_error', optimizer = Adam(learning_rate=0.001), metrics = ['accuracy'])
+mlp.compile(loss = 'mse', optimizer = Adam(learning_rate=0.001), metrics = ['accuracy'])
 hist = mlp.fit(x_train, y_train, batch_size = 128, epochs = 30, validation_data = (x_test, y_test), verbose = 2)
 
 res = mlp.evaluate(x_test, y_test, verbose = 0)
